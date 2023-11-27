@@ -1,15 +1,28 @@
-require 'os'
-
-def meu_SO
-  if OS.windows?
-    "Windows"
-  elsif OS.linux?
-    "Linux"
-  elsif OS.mac?
-    "Mac"
-  else "não indetifiquei o sistema operacional"
+class Objeto
+  def escrever
+    puts 'Escrevendo'
   end
 end
 
-puts "Meu pc é #{OS.bits} bits, possui #{OS.cpu_count} cores e o sist. operacional é #{meu_SO}"
+class Lapis < Objeto
+  def escrever
+    puts 'Escrevendo à lápis'
+  end
+end
 
+class Caneta < Objeto
+  def escrever
+    puts 'Escrevendo à caneta'
+  end
+end
+
+class Teclado < Objeto
+
+end
+lapis = Lapis.new
+caneta = Caneta.new
+teclado = Teclado.new
+
+lapis.escrever
+caneta.escrever
+teclado.escrever
